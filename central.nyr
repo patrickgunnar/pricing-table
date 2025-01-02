@@ -1,0 +1,106 @@
+Construct Central {
+    Declare Imports([
+        Import("https://fonts.googleapis.com/css?family=Open+Sans:400,700")
+    ]),
+    Declare Typefaces({
+        DrunkenHour: "/fonts/drunken hour/DrunkenHour.otf"
+    }),
+    Declare Breakpoints({
+        MobileFirst({
+            LargeScreen: "1024px",
+        })
+    }),
+    Declare Aliases({
+        bgd: background,
+        bgdColor: backgroundColor,
+        txtFont: fontFamily,
+        txtSize: fontSize,
+        bold: fontWeight,
+        txtShadow: textShadow,
+        pos: position,
+        hr: height,
+        minHr: minHeight,
+        wd: width,
+        p: padding,
+        br: borderRadius,
+        flexDir: flexDirection,
+        align: alignItems,
+        justify: justifyContent,
+        shadow: boxShadow,
+        m: margin,
+        z: zIndex,
+    }),
+    Declare Variables({
+        yellow: "hsl(61, 86%, 77%)",
+        black: "hsl(227, 15%, 24%)",
+        blue: "hsl(190, 51%, 65%)",
+        lightBlue: "hsl(145, 35%, 89%)",
+        red: "hsl(351, 82%, 55%)",
+        white: "hsl(0, 0%, 100%)",
+
+    }),
+    Declare Animation("textHover") {
+        From({
+            right: "-30%"
+        }),
+        Halfway({
+            right: "-37%"
+        }),
+        To({
+            right: "-30%"
+        })
+    },
+    Declare Class("body") {
+        Stylesheet({
+            display: "block",
+            bgd: "${black}",
+            color: "${white}",
+            txtFont: "'Open Sans', sans-serif",
+            bold: "700",
+            txtShadow: "2px 2px 1px rgba(0, 0, 0, 0.6)",
+            overflowX: "hidden",
+            overflowY: "auto"
+        })
+    },
+    Declare Class("borderBox") {
+        Stylesheet({
+            boxSizing: "border-box",
+        })
+    },
+    Declare Class("flexCenterBox") Deriving("borderBox") {
+        Stylesheet({
+            display: "flex",
+            align: "center",
+            justify: "center",
+        })
+    },
+    Declare Class("unstyledLink") {
+        Stylesheet({
+            textDecoration: "none",
+            color: "inherit",
+            background: "none",
+            border: "none",
+            outline: "none",
+        }),
+        Hover({
+            textDecoration: "none",
+            color: "inherit",
+            outline: "none",
+        }),
+        Active({
+            textDecoration: "none",
+            color: "inherit",
+            outline: "none",
+        }),
+        Visited({
+            textDecoration: "none",
+            color: "inherit",
+            outline: "none",
+        }),
+        Focus({
+            textDecoration: "none",
+            color: "inherit",
+            outline: "none",
+        })
+    },
+}

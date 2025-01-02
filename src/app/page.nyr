@@ -1,0 +1,173 @@
+Construct Module("pricingTableComponent") {
+    Declare Variables({
+        lilac: "hsl(240, 51%, 67%)",
+        lightTeal: "hsl(176, 68%, 74%)",
+        lightBlue: "hsl(219, 67%, 72%)",
+        raspberry: "hsl(346, 100%, 63%)",
+        scarlet: "hsl(9, 100%, 58%)",
+        deepTeal: "hsl(173, 100%, 35%)",
+        limeGreen: "hsl(82, 56%, 51%)",
+    }),
+    Declare Class("pricingTable") Deriving("flexCenterBox") {
+        Stylesheet({
+            gap: "30px",
+            flexWrap: "wrap",
+            pos: "relative",
+            m: "80px auto",
+            userSelect: "none"
+        })
+    },
+    Declare Class("card") {
+        Stylesheet({
+            display: "flex",
+            flexDir: "column",
+            align: "center",
+            br: "1.5rem",
+            shadow: "2px 2px 46px -4px rgba(0, 0, 0, 0.6)",
+            p: "30px",
+            hr: "370px",
+            wd: "220px",
+            pos: "relative",
+            overflow: "hidden",
+            transition: "all 0.2s ease-in-out"
+        })
+    },
+    Declare Class("basic") {
+        Stylesheet({
+            bgdColor: "${lilac}",
+            bgd: "linear-gradient(to left, ${lightTeal}, ${lightBlue}, ${lilac})"
+        }),
+    },
+    Declare Class("priceBasic") {
+        Before({
+            content: "'$20'"
+        })
+    },
+    Declare Class("medium") {
+        Stylesheet({
+            bgdColor: "${raspberry}",
+            bgd: "linear-gradient(to right, ${scarlet}, ${raspberry})",
+        }),
+        PanoramicViewer({
+            LargeScreen({
+                Stylesheet({
+                    hr: "400px",
+                    wd: "250px",
+                    z: "2",
+                })
+            })
+        })
+    },
+    Declare Class("priceMedium") {
+        Before({
+            content: "'$50'"
+        })
+    },
+    Declare Class("premium") {
+        Stylesheet({
+            bgdColor: "${deepTeal}",
+            bgd: "linear-gradient(to right, ${limeGreen}, ${deepTeal})",
+        }),
+    },
+    Declare Class("pricePremium") {
+        Before({
+            content: "'$100'"
+        })
+    },
+    Declare Class("priceContainer") {
+        Stylesheet({
+            fontSize: "7.5rem",
+            m: "10px 0px 20px",
+            pos: "relative",
+            z: "2"
+        }),
+        Before({
+            color: "rgba(255, 255, 255, 0.06)",
+            fontSize: "9.5rem",
+            pos: "absolute",
+            right: "-30%",
+            bottom: "15%",
+            txtShadow: "0 0 0px rgba(0, 0, 0, 0)",
+            transition: "all 1s ease-in-out",
+            z: "-1",
+            animation: "${textHover} 1s ease-in-out infinite normal"
+        }),
+    },
+    Declare Class("priceSpan") {
+        Stylesheet({
+            fontSize: "1.8rem",
+            top: "65%",
+            left: "-15%",
+            pos: "absolute",
+        })
+    },
+    Declare Class("subscribeButton") {
+        Stylesheet({
+            bgdColor: "${white}",
+            br: "1.5rem 0 1.5rem 0",
+            border: "none",
+            cursor: "pointer",
+            fontSize: "1rem",
+            txtShadow: "0 0 0",
+            textDecoration: "none",
+            color: "${black}",
+            bold: "700",
+            pos: "absolute",
+            right: "0%",
+            bottom: "0%",
+            hr: "50px",
+            wd: "50%",
+            transition: "all 0.4s ease-in-out"
+        }),
+        Hover({
+            transform: "scale(1.02)",
+            br: "0",
+            wd: "100%"
+        })
+    },
+    Declare Class("bigLabel") {
+        Stylesheet({
+            fontSize: "1.2rem",
+        })
+    },
+    Declare Class("type") {
+        Stylesheet({
+            marginTop: "30px",
+            letterSpacing: "0.1rem"
+        })
+    },
+    Declare Class("plan") {
+        Stylesheet({
+            fontSize: "1.3rem",
+            marginBottom: "10px",
+            pos: "relative",
+        }),
+        Before({
+            content: "''",
+            bgdColor: "${white}",
+            hr: "2px",
+            wd: "35px",
+            right: "100%",
+            bottom: "40%",
+            pos: "absolute",
+            transform: "translate(-50%, -50%)",
+            transition: "all 0.2s ease-out",
+        }),
+        After({
+            content: "''",
+            bgdColor: "${white}",
+            hr: "2px",
+            wd: "35px",
+            right: "-100%",
+            bottom: "40%",
+            pos: "absolute",
+            transform: "translate(-0%, -50%)",
+            transition: "all 0.2s ease-out",
+        })
+    },
+    Declare Class("list") {
+        Stylesheet({
+            m: "15px 0px"
+        })
+    },
+}
