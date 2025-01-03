@@ -5,6 +5,7 @@ import {
     FaTiktok,
     FaLinkedinIn,
     FaNpm,
+    FaDiscord,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -21,6 +22,12 @@ export const socialMedia: SocialMediaType[] = [
         link: "https://github.com/patrickgunnar/galadrielcss",
         id: "galadrielcss-github-repository-icon",
         icon: FaGithub,
+    },
+    {
+        label: "Galadriel CSS Community Server",
+        link: "https://discord.gg/jw3DKw9nK7",
+        id: "galadrielcss-community-server-icon",
+        icon: FaDiscord,
     },
     {
         label: "Galadriel CSS Twitter/X Account",
